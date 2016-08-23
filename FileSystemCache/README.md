@@ -8,29 +8,29 @@
 ## Sources:
 * [Linux System Administrators Guide](http://www.tldp.org/LDP/sag/html/buffer-cache.html)
 
-    Reading from a disk is very slow compared to accessing (real) memory.
-    In addition, it is common to read the same part of a disk 
-      several times during relatively short periods of time....
-    By reading the information from disk only once 
-      and then keeping it in memory until no longer needed, 
-      one can speed up all but the first read. 
-    This is called disk buffering, 
-      and the memory used for the purpose is called the buffer cache.
-
-    Most operating systems have buffer caches (although they might be called something else)...
-    Some are write-through: the data is written to disk at once 
-      (it is kept in the cache as well, of course). 
-    The cache is called write-back if the writes are done at a later time. 
-
-    Write-back is more efficient than write-through, but also a bit more prone to errors: 
-      if the machine crashes, 
-        or the power is cut at a bad moment, 
-        or the floppy is removed from the disk drive before 
-          the data in the cache waiting to be written gets written,
-      the changes in the cache are usually lost. 
-      
-      **This might even mean that the filesystem (if there is one) is not in full working order, 
-        perhaps because the unwritten data held important changes to the bookkeeping information.**
+>    Reading from a disk is very slow compared to accessing (real) memory.
+>    In addition, it is common to read the same part of a disk 
+>      several times during relatively short periods of time....
+>    By reading the information from disk only once 
+>      and then keeping it in memory until no longer needed, 
+>      one can speed up all but the first read. 
+>    This is called disk buffering, 
+>      and the memory used for the purpose is called the buffer cache.
+>
+>    Most operating systems have buffer caches (although they might be called something else)...
+>    Some are write-through: the data is written to disk at once 
+>      (it is kept in the cache as well, of course). 
+>    The cache is called write-back if the writes are done at a later time. 
+>
+>    Write-back is more efficient than write-through, but also a bit more prone to errors: 
+>      if the machine crashes, 
+>        or the power is cut at a bad moment, 
+>        or the floppy is removed from the disk drive before 
+>          the data in the cache waiting to be written gets written,
+>      the changes in the cache are usually lost. 
+>      
+>    This might even mean that the filesystem (if there is one) is not in full working order, 
+>      perhaps because the unwritten data held important changes to the bookkeeping information.
 
 
 
